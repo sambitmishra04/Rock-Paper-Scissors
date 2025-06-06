@@ -13,7 +13,7 @@ function getComputerChoice() {
     }
 }
 
-console.log(getComputerChoice())
+//console.log(getComputerChoice())
 
 
 function getHumanChoice () {
@@ -21,12 +21,14 @@ function getHumanChoice () {
     return choice.toLowerCase()
 }
 
-console.log(getHumanChoice())
+//console.log(getHumanChoice())
 
 humanScore = 0
 computerScore = 0
 
 function playRound(humanChoice , computerChoice) {  // we got to pass the choices. cant do it inside the function
+    console.log("you chose: " + humanChoice)
+    console.log("computer chose: " + computerChoice)
     if (humanChoice == "rock") {
         if (computerChoice == "rock") {
             console.log("draw")
@@ -34,10 +36,13 @@ function playRound(humanChoice , computerChoice) {  // we got to pass the choice
         else if (computerChoice == "scissors") {
             humanScore += 1 
             console.log("you won")
+            console.log(humanChoice + " beats " + computerChoice)
         }
         else if (computerChoice == "paper") {
             computerScore += 1
             console.log("computer won")
+            console.log(computerChoice + " beats " + humanChoice)
+
         }    
     }
 
@@ -45,11 +50,14 @@ function playRound(humanChoice , computerChoice) {  // we got to pass the choice
         if (computerChoice == "rock") {
             humanScore += 1
             console.log("you won")
+            console.log(humanChoice + " beats " + computerChoice)
 
         }
         else if (computerChoice == "scissors") {
             computerScore += 1
             console.log("computer won")
+            console.log(computerChoice + " beats " + humanChoice)
+
 
         }
         else if (computerChoice == "paper") {
@@ -57,10 +65,11 @@ function playRound(humanChoice , computerChoice) {  // we got to pass the choice
         }    
     }
 
-    if (humanChoice == "scissors") {
+    else if (humanChoice == "scissors") {
         if (computerChoice == "rock") {
             computerScore += 1
             console.log("computer won")
+            console.log(computerChoice + " beats " + humanChoice)
 
         }
         else if (computerChoice == "scissors") {
@@ -70,6 +79,7 @@ function playRound(humanChoice , computerChoice) {  // we got to pass the choice
             
             humanScore += 1 
             console.log("you won")
+            console.log(humanChoice + " beats " + computerChoice)
 
         }    
     }
