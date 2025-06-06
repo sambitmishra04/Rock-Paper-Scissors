@@ -22,3 +22,60 @@ function getHumanChoice () {
 }
 
 console.log(getHumanChoice())
+
+humanScore = 0
+computerScore = 0
+
+function playRound(humanChoice , computerChoice) {  // we got to pass the choices. cant do it inside the function
+    if (humanChoice == "rock") {
+        if (computerChoice == "rock") {
+            console.log("draw")
+        }
+        else if (computerChoice == "scissors") {
+            humanScore += 1 
+            console.log("you won")
+        }
+        else if (computerChoice == "paper") {
+            computerScore += 1
+            console.log("computer won")
+        }    
+    }
+
+    else if (humanChoice == "paper") {
+        if (computerChoice == "rock") {
+            humanScore += 1
+            console.log("you won")
+
+        }
+        else if (computerChoice == "scissors") {
+            computerScore += 1
+            console.log("computer won")
+
+        }
+        else if (computerChoice == "paper") {
+            console.log("draw")
+        }    
+    }
+
+    if (humanChoice == "scissors") {
+        if (computerChoice == "rock") {
+            computerScore += 1
+            console.log("computer won")
+
+        }
+        else if (computerChoice == "scissors") {
+            console.log("draw")
+        }
+        else if (computerChoice == "paper") {
+            
+            humanScore += 1 
+            console.log("you won")
+
+        }    
+    }
+}
+
+const humanSelection = getHumanChoice()
+const computerSelection = getComputerChoice()
+
+playRound(humanSelection, computerSelection)   // must be called to be executed man
