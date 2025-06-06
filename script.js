@@ -23,8 +23,8 @@ function getHumanChoice () {
 
 //console.log(getHumanChoice())
 
-humanScore = 0
-computerScore = 0
+let humanScore = 0
+let computerScore = 0
 
 function playRound(humanChoice , computerChoice) {  // we got to pass the choices. cant do it inside the function
     console.log("you chose: " + humanChoice)
@@ -85,7 +85,29 @@ function playRound(humanChoice , computerChoice) {  // we got to pass the choice
     }
 }
 
-const humanSelection = getHumanChoice()
-const computerSelection = getComputerChoice()
+// const humanSelection = getHumanChoice()
+// const computerSelection = getComputerChoice()
 
-playRound(humanSelection, computerSelection)   // must be called to be executed man
+//playRound(humanSelection, computerSelection)   // must be called to be executed man
+
+function playGame () {
+    for (let i = 0; i < 5 ; i++) {
+        const computerSelection = getComputerChoice()
+        const humanSelection = getHumanChoice()
+        playRound(humanSelection, computerSelection)
+        console.log(`Score: You ${humanScore} - Computer ${computerScore}`)
+
+    }
+
+    if (humanScore > computerScore) {
+        console.log("you won")
+    }
+    else if ( humanScore < computerScore){
+        console.log("computer won")
+    }
+    else {
+        console.log("draw")
+    }
+}
+
+playGame()
